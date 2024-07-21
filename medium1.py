@@ -24,18 +24,28 @@ class linkedlist:
     
     def grp_rev(self,k):
         current=self.head
-        temp=self.head
-        count=1
-        while count!=k:
-            if current.link==None:
-                break
+        count=k
+        while current!=None:
+            if count==k:
+                print(current.data)
+                if current==self.head:
+                    current=current.link
+                    count=2
+                else:
+                    temp=current_temp
+                    current_temp=current
+                    while count!=1:
+                        while temp.link!=current:
+                            temp=temp.link
+                        current=temp
+                        print(current.data)
+                        count-=1
+                    current=current_temp
+                    
             else:
                 current=current.link
-            count+=1
-        temp=current
-        
+                count+=1
 
-    
 l=linkedlist()
 while True:
     choice=int(input("Enter your choice: "))
