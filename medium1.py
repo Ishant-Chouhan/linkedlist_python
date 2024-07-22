@@ -28,7 +28,7 @@ class linkedlist:
         countk=0
         countm=0
         while countk!=k:
-            
+            pass
 
 
 l=linkedlist()
