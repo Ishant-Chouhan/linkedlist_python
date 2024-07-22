@@ -22,29 +22,14 @@ class linkedlist:
             print(current.data)
             current=current.link
     
-    def grp_rev(self,k):
+    def grp_rev(self,k,m):
         current=self.head
-        count=k
-        while current!=None:
-            if count==k:
-                print(current.data)
-                if current==self.head:
-                    current=current.link
-                    count=2
-                else:
-                    temp=current_temp
-                    current_temp=current
-                    while count!=1:
-                        while temp.link!=current:
-                            temp=temp.link
-                        current=temp
-                        print(current.data)
-                        count-=1
-                    current=current_temp
-                    
-            else:
-                current=current.link
-                count+=1
+        temp=self.head
+        countk=0
+        countm=0
+        while countk!=k:
+            
+
 
 l=linkedlist()
 while True:
@@ -54,7 +39,7 @@ while True:
     elif choice==2:
         l.print()
     elif choice==3:
-        l.grp_rev(4)
+        l.grp_rev(4,7)
     else:
         print("*****************thankyou*****************")
         break
