@@ -29,18 +29,20 @@ class linkedlist:
             last=last.link
         first=self.head
         count=0
-        while last!=first or last.link!=first:
+        while True:
             if first.data!=last.data:
                 count=1
-                print("Not a Plaindrome")
+                print("********Not a Plaindrome********")
                 break
-            first=first.link
+            if first==last or last.link==first:
+                break
             temp=self.head
             while temp.link!=last:
                 temp=temp.link
             last=temp
+            first=first.link
         if count==0:
-            print("Palinedrome")
+            print("********Palinedrome********")
 
 l=linkedlist()
 while True:
@@ -56,6 +58,9 @@ press 3 to check palindrome""")
 
     elif choice ==3:
         l.check_palindrome()
+    
+    elif choice==4:
+        l.reversal()
 
     else:
         print("*******************thanks*******************")
